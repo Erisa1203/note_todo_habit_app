@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="colorpick/colorPick.min.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jura" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined"  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
+  <title>habits</title>
+</head>
+<body onContextmenu="return false;">
+  <div class="app-wrapper">
+    <div class="sidebar-wrapper">
+      <div class="sidebar sidebar--fixed">
+        <nav class="nav">
+          <div class="nav__content">
+            <div class="nav__item"><a href="/note.html" class="nav__inner">notes</a></div>
+            <div id="nav-todos" class="nav__item"><a href="/todos.html" class="nav__inner">todos</a></div>
+            <div id="nav-todos" class="nav__item selected"><a href="/habits.html" class="nav__inner">habits</a></div>
+          </div>
+          <div id="display-fav-folders" class="nav__content">
+            <div class="fsz-12 mb10">favorite</div>
+          </div>
+        </nav>
+        <div class="close-sidebar js-close-sidebar">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+        <div class="add-contents">
+          <div class="icon-nav_wrapper">
+            <div class="icon-nav">
+              <div class="icon-nav__item js-create-new-note">
+                <span class="material-icons-outlined icon md-20">note_add</span>new note
+              </div>
+              <div id="create_new_todo" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">check_box</span>create todo
+              </div>
+              <div id="set_timer" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">timer</span>set timer
+              </div>
+            </div>
+          </div>
+          <div class="btn btn--circle">
+            <span class="material-symbols-outlined">add</span>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-notes" class="sidebar sidebar--side">
+        <nav class="nav">
+          <div class="nav__content">
+          </div>
+        </nav>
+        <div class="add-new add-new--nowrap js-create-new-folder">
+          <span class="icon md-16 material-symbols-outlined">add_box</span>add new folder
+        </div>
+        <div class="close-sidebar js-close-sidebar-opened">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+      </div>
+    </div>
+    <div class="app-content">
+      <div class="l-container l-container--wide">
+        <div class="l-content habit-app">
+          <div class="card card--md-nopad app-widget app-widget--float">
+            <div class="app-widget__input">
+              <input type="text" placeholder="add new habit" class="js-habit-input">
+            </div>
+            <!-- .app-widget__right -->
+            <div class="app-widget__side">
+              <div class="add-color add-to">
+                <span class="add-color__box picker"></span>
+                add color
+              </div>
+                <!-- <div class="alert">
+                  <span class="icon md-16 material-icons">notifications</span>
+                  <span>alert</span>
+                </div> -->
+            </div>
+            <button class="add js-add-habit"><span class=" icon md-24 material-symbols-outlined app-widget__icon">done</span></button>
+          </div>
+          <div class="card card--md no-habit">No habits to show</div>
+          <div class="card card--md-nopad habit-card">
+            <div class="habit-card__fixed">
+              <div class="habit-card__head js-current-board">
+                <span class="habit-card__head-year"></span>
+                <span class="habit-card__head-month"></span>
+              </div>
+              <!-- <div class="habit-card__head"><span class="color-block js-color-setting"></span>散歩する</div> -->
+            </div>
+            <div class="habit-card__content">
+              <div class="habit-card__row dates"></div>
+              <!-- <div class="habit-card__row habit-card__item track"></div> -->
+            </div>
+            <div class="arrow-box">
+              <span class="arrow arrow--text arrow--back">prev</span>
+              <span class="arrow arrow--text arrow--next">next</span>
+            </div>
+          </div>
+          <div class="widget-holder">
+            <div class="card card--lg habit-overview">
+              <div class="habit-overview__title heading heading--border">
+                <span class="js-overview-title"></span>
+                <span class="habit-overview__next">next habit<span class="icon md-14 material-symbols-outlined">
+                  chevron_right</span></span>
+              </div>
+              <div class="habit-overview__content">
+                <div class="info">
+                  <div class="info__title">CURRENT STREAK</div>
+                  <div class="info__num js-current-streak"></div>
+                </div>
+                <div class="info">
+                  <div class="info__title">LONGEST STREAK</div>
+                  <div class="info__num js-longest-streak"></div>
+                </div>
+              </div>
+              <div class="habit-overview__content">
+                <div class="info info--month">
+                  <div class="info__title">THIS MONTH</div>
+                  <div class="info__content">
+                    <div class="info">
+                      <div class="info__title">SCORE</div>
+                      <div class="info__num js-this-month-score"></div>
+                    </div>
+                    <!-- <div class="info">
+                      <div class="info__title">SCORE</div>
+                      <div class="info__num js-this-month-percent"></div>
+                    </div> -->
+                    <div class="info">
+                      <div class="info__title">TOTAL</div>
+                      <div class="info__num js-this-month-total"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="widget-holder__side">
+              <div class="card card--lg habit-for-today">
+                <div class="heading heading--border">
+                  Today
+                </div>
+                <div class="habit-for-today__content">
+                </div>
+              </div>
+              <!-- <div class="card card--iconCard js-history">
+                <span class="material-symbols-outlined">history</span>history
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-widget_wrapper">
+    <div class="sidebar-widget">
+      <div class="sidebar-widget__item js-delete">
+        <span class="icon material-symbols-outlined md-20">delete</span>delete
+      </div>
+      <div class="sidebar-widget__item js-rename">
+        <span class="icon material-symbols-outlined">drive_file_rename_outline</span>rename
+      </div>
+    </div>
+  </div>
+
+  <script src="colorpick/jquery-3.6.3.min.js"></script>
+  <script src="colorpick/colorPick.min.js"></script>
+  <script src="scripts/index-bundle.js"></script>
+  <script src="scripts/habit-bundle.js"></script>
+</body>
+</html>

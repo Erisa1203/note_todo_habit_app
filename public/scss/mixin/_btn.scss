@@ -1,0 +1,25 @@
+// @use "base" as *;
+@mixin btn-circle($width) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: #{$width}px;
+  height: #{$width}px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  user-select: none;
+  transition: .2s linear
+}
+
+.btn {
+  
+  &--circle {
+    @include btn-circle(46);
+  }
+  &:hover {
+    box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.18);
+
+  }
+}

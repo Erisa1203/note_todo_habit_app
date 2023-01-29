@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jura" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined"  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
+  <title>HOME</title>
+</head>
+<body onContextmenu="return false;">
+  <div class="app-wrapper">
+    <div class="sidebar-wrapper">
+      <div class="sidebar sidebar--fixed">
+        <div id="searchInput" class="search">
+          <span class="material-symbols-outlined icon md-16">search</span>
+          <input type="text" placeholder="search">
+        </div>
+        <nav class="nav">
+          <div class="nav__content">
+            <div class="nav__item"><a href="/note.html" class="nav__inner">notes</a></div>
+            <div id="nav-todos" class="nav__item"><a href="/todos.html" class="nav__inner">todos</a></div>
+            <div id="nav-todos" class="nav__item"><a href="/calendar.html" class="nav__inner">calendar</a></div>
+            <div id="nav-todos" class="nav__item"><a href="/habits.html" class="nav__inner">habits</a></div>
+            <div id="nav-todos" class="nav__item"><a href="/study.html" class="nav__inner">study log</a></div>
+          </div>
+          <div id="display-fav-folders" class="nav__content">
+            <div class="fsz-12 mb10">favorite</div>
+          </div>
+        </nav>
+        <div class="close-sidebar js-close-sidebar">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+        <div class="add-contents">
+          <div class="icon-nav_wrapper">
+            <div class="icon-nav">
+              <div class="icon-nav__item js-create-new-note">
+                <span class="material-icons-outlined icon md-20">note_add</span>new note
+              </div>
+              <div id="create_new_todo" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">check_box</span>create todo
+              </div>
+              <div id="set_timer" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">timer</span>set timer
+              </div>
+            </div>
+          </div>
+          <div class="btn btn--circle">
+            <span class="material-symbols-outlined">add</span>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-notes" class="sidebar sidebar--side">
+        <nav class="nav">
+          <div class="nav__content">
+          </div>
+        </nav>
+        <div class="add-new add-new--nowrap js-create-new-folder">
+          <span class="icon md-16 material-symbols-outlined">add_box</span>add new folder
+        </div>
+        <div class="close-sidebar js-close-sidebar-opened">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+      </div>
+    </div>
+    <div class="app-content">
+      <div class="l-container l-container--full">
+        <div class="overview">
+          <div class="overview__title">overview</div>
+          <div class="col2">
+            <div class="card card--md overview-clock">
+              <div class="overview-clock__date">10月23日（火）</div>
+              <div class="overview-clock__time">11:25</div>
+            </div>
+            <div class="widget-holder">
+              <div class="card card--col2 card--iconCard js-create-new-note">
+                <span class="material-symbols-outlined">timer</span>set timer
+              </div>
+              <div class="card card--col2 card--iconCard js-create-new-folder">
+                <span class="material-symbols-outlined">timer_off</span>end timer
+              </div>
+            </div>
+          </div>
+          <div class="col2">
+            <div class="card card--md main-block">
+              <div class="main-block__top">
+                <div class="card-header">
+                  notes
+                </div>
+                <div class="main-block__content">
+                  <span class="sub-title">recent notes</span>
+                  <ul class="dot-list">
+                    <li>note1note1note1note1note1note1</li>
+                    <li>note1note1note1note1note1note1</li>
+                    <li>note1note1note1note1note1note1</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="btn btn--border js-create-new-note">create new note</div>
+            </div>
+            <div class="card card--md main-block">
+              <div class="main-block__top">
+                <div class="card-header">
+                  todo
+                  <span class="js-todo-unfinished">3 unfinished todos</span>
+                </div>
+                <div class="main-block__content">
+                  <span class="sub-title">today's todo</span>
+                  <ul class="dot-list">
+                    <li>note1note1note1note1note1note1</li>
+                    <li>note1note1note1note1note1note1</li>
+                    <li>note1note1note1note1note1note1</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="btn btn--border js-create-new-note">create new todo</div>
+            </div>
+          </div>
+          <div class="col2">
+            <div class="card card-md">
+              <div class="card-header">
+                study log
+                <span class="js-get-study-hours">studied for 2.5h todaay</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-widget_wrapper">
+    <div class="sidebar-widget">
+      <div class="sidebar-widget__item js-delete">
+        <span class="icon material-symbols-outlined md-20">delete</span>delete
+      </div>
+      <div class="sidebar-widget__item js-rename">
+        <span class="icon material-symbols-outlined">drive_file_rename_outline</span>rename
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/index-bundle.js"></script>
+  <script src="scripts/todos-bundle.js"></script>
+</body>
+</html>

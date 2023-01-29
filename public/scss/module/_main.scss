@@ -1,0 +1,25 @@
+@use "../base" as *;
+@use "../mixin" as *;
+
+
+.app-wrapper {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100vh;
+    @include bg-default;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.app-content {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+}

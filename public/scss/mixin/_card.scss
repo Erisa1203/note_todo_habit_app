@@ -1,0 +1,38 @@
+@use "../base/colors" as *;
+
+// @include card(30px);
+
+@mixin radius-small() {
+  border-radius: 4px;
+}
+
+@mixin shadow() {
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 3px 3px 40px rgba(0, 0, 0, 0.08);
+}
+
+@mixin resetShadow() {
+  background: none;
+  box-shadow: none;
+}
+
+@mixin card-layout($radius, $padding) {
+  border-radius: #{$radius}px;
+  padding: #{$padding}px;
+  // cursor: pointer;
+}
+@mixin card-border($radius) {
+  font-size: 1.6rem;
+  border: 1px solid $gray-lighter;
+  color: $text-gray;
+  background: rgba(255, 255, 255, 0.86);
+  border-radius: #{$radius}px;
+  padding: #{$radius}px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 3px 3px 40px rgba(0, 0, 0, 0.08);
+    transition: .2s linear;
+    border-color:$gray-light;
+  }
+}
+

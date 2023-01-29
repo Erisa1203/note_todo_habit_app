@@ -1,0 +1,19 @@
+// RESPONSIVE
+// @include tb
+//--------------------------------------------------
+
+@mixin sp {
+  @media print, screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tb {
+  @media print, screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin pc {
+  @media print, screen and (max-width: 1024px) {
+    @content;
+  }
+}

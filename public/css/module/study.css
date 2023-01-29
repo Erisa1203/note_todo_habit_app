@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/*-------------------------
+  common
+-------------------------*/
+/* default theme
+-------------------------*/
+.btn--circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s linear;
+}
+.btn:hover {
+  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.18);
+}
+
+html,
+body {
+  font-size: 10px;
+}
+
+body {
+  font-weight: 400;
+  color: #0F0F0F;
+  font-family: YuGothic, "Yu Gothic", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+  overflow: hidden;
+  position: relative;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #0F0F0F;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.l-container {
+  width: 100%;
+  padding: 40px 8.7% 40px calc(290px + 8.7%);
+  transition: 0.5s ease-out;
+}
+.l-container--full {
+  height: 100vh;
+  overflow: hidden;
+}
+.l-container--wide {
+  padding: 40px 6% 40px calc(290px + 6%);
+}
+.l-container.wide {
+  padding: 60px 15%;
+}
+
+.fsz-10 {
+  font-size: 1rem;
+}
+
+.fsz-11 {
+  font-size: 1.1rem;
+}
+
+.fsz-12 {
+  font-size: 1.2rem;
+}
+
+.fsz-13 {
+  font-size: 1.3rem;
+}
+
+.fsz-14 {
+  font-size: 1.4rem;
+}
+
+.fsz-15 {
+  font-size: 1.5rem;
+}
+
+.fsz-16 {
+  font-size: 1.6rem;
+}
+
+.mb10 {
+  margin-bottom: 1rem;
+}
+
+.mb20 {
+  margin-bottom: 2rem;
+}
+
+/* Rules for sizing the icon. */
+.icon.md-14 {
+  font-size: 14px;
+}
+
+.icon.md-16 {
+  font-size: 16px;
+}
+
+.icon.md-18 {
+  font-size: 18px;
+}
+
+.icon.md-20 {
+  font-size: 20px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: white;
+}
+
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.study-app .widget-holder {
+  margin-bottom: 20px;
+}
+.study-app .widget-holder .card {
+  min-height: 150px;
+  justify-content: center;
+}
+
+.study-widget {
+  display: none;
+}
+
+.study-card {
+  display: flex;
+  flex: 1;
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding: 0;
+}
+.study-card:first-child {
+  left: 0;
+}
+.study-card:nth-child(n+2) {
+  left: 150%;
+}
+.study-card__inner {
+  width: 100%;
+}
+.study-card__side {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+.study-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+}
+.study-card__head:not(.study-card__day .study-card__head) {
+  width: 150px;
+  height: 65px;
+  font-size: 1.6rem;
+}
+.study-card__day .study-card__head {
+  width: 80px;
+  height: 65px;
+  font-size: 1.4rem;
+}
+.study-card__head, .study-card .time-block > div, .study-card .time-blocking > div {
+  border-bottom: 1px solid #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+}
+.study-card .time-block > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  color: #aeaeae;
+  background: #fff;
+}
+.study-card .time-block > div, .study-card .time-blocking > div {
+  height: 27px;
+}
+.study-card.js-slide-inactive {
+  left: -150%;
+  z-index: 1;
+  transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.study-card.js-slide-active {
+  left: 0%;
+  z-index: 1;
+  transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+}

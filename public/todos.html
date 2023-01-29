@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jura" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined"  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
+  <title>Note app</title>
+</head>
+<body onContextmenu="return false;">
+  <div class="app-wrapper">
+    <div class="sidebar-wrapper">
+      <div class="sidebar sidebar--fixed">
+        <nav class="nav">
+          <div class="nav__content">
+            <div class="nav__item"><a href="/note.html" class="nav__inner">notes</a></div>
+            <div id="nav-todos" class="nav__item selected"><a href="/todos.html" class="nav__inner">todos</a></div>
+            <div id="nav-todos" class="nav__item"><a href="/habits.html" class="nav__inner">habits</a></div>
+          </div>
+          <div id="display-fav-folders" class="nav__content">
+            <div class="fsz-12 mb10">favorite</div>
+          </div>
+        </nav>
+        <div class="close-sidebar js-close-sidebar">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+        <div class="add-contents">
+          <div class="icon-nav_wrapper">
+            <div class="icon-nav">
+              <div class="icon-nav__item js-create-new-note">
+                <span class="material-icons-outlined icon md-20">note_add</span>new note
+              </div>
+              <div id="create_new_todo" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">check_box</span>create todo
+              </div>
+              <div id="set_timer" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">timer</span>set timer
+              </div>
+            </div>
+          </div>
+          <div class="btn btn--circle">
+            <span class="material-symbols-outlined">add</span>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-notes" class="sidebar sidebar--side">
+        <nav class="nav">
+          <div class="nav__content">
+          </div>
+        </nav>
+        <div class="add-new add-new--nowrap js-create-new-folder">
+          <span class="icon md-16 material-symbols-outlined">add_box</span>add new folder
+        </div>
+        <div class="close-sidebar js-close-sidebar-opened">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+      </div>
+    </div>
+    <div class="app-content">
+      <div class="l-container l-container--full">
+        <div class="l-content todo-app">
+          <div class="card card--md-nopad app-widget">
+            <!-- <div class="app-widget__cover">
+              <p>add new todo<span class="icon md-16 material-symbols-outlined">expand_more</span></p>
+            </div> -->
+            <div class="app-widget__input js-todo-input">
+              <input type="text" placeholder="add new todos">
+            </div>
+            <div class="app-widget__side">
+              <!-- <div class="app-widget__side-top"> -->
+                <!-- <div class="alert js-todo-alert">
+                  <span class="icon md-16 material-icons">notifications</span>
+                  <span>alert</span>
+                </div> -->
+                <div class="add-to">
+                  <span class="icon md-16 material-symbols-outlined">east</span>
+                  <select class="add-to__select js-todo-select-deadline">
+                    <option value="today">today</option>
+                    <option value="tomorrow">tomorrow</option>
+                    <option value="this week">this week</option>
+                    <option value="this month">this month</option>
+                    <option value="upcoming">upcoming</option>
+                  </select>
+                </div>
+                <div class="add-to">
+                  <input type="date" name="" id="">
+                </div>
+
+            </div>
+            <button class="add js-add-new-todo"><span class=" icon md-24 material-symbols-outlined app-widget__icon">done</span></button>
+          </div>
+          <div class="todo-app__content">
+            <div class="card card--lg date-card">
+              <!-- <div class="main-board__box">
+                <div class="side-header">
+                  <div class="side-header__name">today</div>
+                  <span class="icon md-16 material-symbols-outlined">add</span>
+                </div>
+                <div class="todos js-todo-for-today"></div>
+              </div> -->
+              <!-- <div class="main-board__box">
+                <div class="side-header">
+                  <div class="side-header__name">this week</div>
+                  <span class="icon md-16 material-symbols-outlined">add</span>
+                </div>
+                <div class="todos"></div>
+              </div>
+              <div class="main-board__box">
+                <div class="side-header">
+                  <div class="side-header__name">this month</div>
+                  <span class="icon md-16 material-symbols-outlined">add</span>
+                </div>
+                <div class="todos"></div>
+              </div> -->
+            </div>
+            <div class="side-content">
+              <div class="card card--lg">
+                <div class="date-card__box">
+                  <div class="side-header">
+                    <div class="side-header__name">this week</div>
+                    <span class="icon md-16 material-symbols-outlined js-add-new-todo">add</span>
+                  </div>
+                  <div class="todos js-todo-for-this-week"></div>
+                </div>
+              </div>
+              <div class="card card--lg">
+                <div class="date-card__box">
+                  <div class="side-header">
+                    <div class="side-header__name">this month</div>
+                    <span class="icon md-16 material-symbols-outlined js-add-new-todo">add</span>
+                  </div>
+                  <div class="todos js-todo-for-this-month"></div>
+                </div>
+              </div>
+              <div class="card card--lg">
+                <div class="date-card__box">
+                  <div class="side-header">
+                    <div class="side-header__name">upcoming</div>
+                    <span class="icon md-16 material-symbols-outlined js-add-new-todo">add</span>
+                  </div>
+                  <div class="todos js-todo-for-upcoming"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-widget_wrapper">
+    <div class="sidebar-widget">
+      <div class="sidebar-widget__item js-delete">
+        <span class="icon material-symbols-outlined md-20">delete</span>delete
+      </div>
+      <div class="sidebar-widget__item js-rename">
+        <span class="icon material-symbols-outlined">drive_file_rename_outline</span>rename
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/index-bundle.js"></script>
+  <script src="scripts/todos-bundle.js"></script>
+</body>
+</html>

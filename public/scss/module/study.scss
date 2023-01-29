@@ -1,0 +1,91 @@
+
+@use "../base" as *;
+@use "../mixin" as *;
+
+
+.study-app {
+  .widget-holder {
+    margin-bottom: 20px;
+    .card {
+      min-height: 150px;
+      justify-content: center;
+    }
+  }
+}
+.study-widget {
+  display: none;
+}
+
+.study-card {
+  $this: &;
+  display: flex;
+  flex: 1;
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding: 0;
+  
+  &:first-child {
+    left: 0;
+  }
+  &:nth-child(n + 2) {
+    left: 150%;
+  }
+  &__inner {
+    width: 100%;
+  }
+  &__side {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+  }
+  &__head:not(.study-card__day .study-card__head) {
+    width: 150px;
+    height: 65px;
+    font-size: 1.6rem;
+  }
+  &__day {
+    #{$this}__head {
+      width: 80px;
+      height: 65px;
+      font-size: 1.4rem;
+    }
+  }
+  &__head, .time-block > div, .time-blocking > div {
+    border-bottom: 1px solid $gray-lighter;
+    border-right: 1px solid $gray-lighter;
+  }
+  .time-block {
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 10px;
+      color: #aeaeae;
+      background: #fff;
+    }
+  }
+  .time-block > div, .time-blocking > div  {
+    height: 27px;
+  }
+  &.js-slide-inactive {
+    left: -150%;
+    z-index: 1;
+    transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &.js-slide-active {
+    left: 0%;
+    z-index: 1;
+    transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

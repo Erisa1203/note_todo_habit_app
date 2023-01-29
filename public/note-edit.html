@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jura" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined"  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
+  <title>Note app</title>
+</head>
+<body onContextmenu="return false;">
+  <div class="app-wrapper">
+    <div class="sidebar-wrapper">
+      <div class="sidebar sidebar--fixed">
+        <div id="searchInput" class="search">
+          <span class="material-symbols-outlined icon md-16">search</span>
+          <input type="text" placeholder="search">
+        </div>
+        <nav class="nav">
+          <div class="nav__content">
+            <div class="nav__item selected"><a href="/note.html" class="nav__inner">notes</a></div>
+            <div id="nav-todos" class="nav__item"><a href="/todos.html" class="nav__inner">todos</a></div>
+            <div id="nav-todos" class="nav__item"><a href="/habits.html" class="nav__inner">habits</a></div>
+          </div>
+          <div id="display-fav-folders" class="nav__content">
+            <div class="fsz-12 mb10">favorite</div>
+          </div>
+        </nav>
+         <div class="close-sidebar js-close-sidebar">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+        <div class="add-contents">
+          <div class="icon-nav_wrapper">
+            <div class="icon-nav">
+              <div id="create_new_note" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">note_add</span>new note
+              </div>
+              <div id="create_new_todo" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">check_box</span>create todo
+              </div>
+              <div id="set_timer" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">timer</span>set timer
+              </div>
+            </div>
+          </div>
+          <div class="btn btn--circle">
+            <span class="material-symbols-outlined">add</span>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-notes" class="sidebar sidebar--side">
+        <nav class="nav">
+          <div class="nav__content">
+          </div>
+          <div class="add-new add-new--nowrap js-create-new-folder">
+            <span class="icon md-16 material-symbols-outlined">add_box</span>add new folder
+          </div>
+        </nav>
+        <div class="close-sidebar js-close-sidebar-opened">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+      </div>
+    </div>
+    <div class="app-content">
+      <div class="l-container">
+        <div class="note note--edit">
+          <div class="note__head">
+            <div id="note-title" class="note__text note__text--title" placeholder="タイトルを入力" contenteditable="true"></div>
+            <div class="note__info">
+              <span class="material-symbols-outlined icon md-20 js-star-icon">star</span>
+              <p id="created-at"></p>
+              <p id="last-edited"></p>
+            </div>
+          </div>
+          <div class="note__content">
+            <!-- <div class="note__checkbox" draggable="true" id="7ae2e089-ea9c-428a-89b7-f4cbb4555f77">
+              <div class="checkbox"></div>
+              <div class="" contenteditable="true">check</div>
+            </div> -->
+            <!-- <img src="./img/a.jpg" alt="" draggable="true"> -->
+            </div>
+          <div class="add-new-block" draggable="true">
+            <div class="add-new">
+              <span class="icon md-16 material-symbols-outlined">add_box</span>add new block
+            </div>
+            <div class="card card--md add-new-card">
+              <div id="createHeading2" class="add-new-card__list">
+                <span class="material-symbols-outlined">title</span>h2
+              </div>
+              <div id="createParagraph" class="add-new-card__list">
+                <span class="material-symbols-outlined">segment</span>paragraph
+              </div>
+              <div id="createCheckbox" class="add-new-card__list">
+                <span class="material-symbols-outlined">check_box_outline_blank</span>checkbox
+              </div>
+              <div id="createImage" class="add-new-card__list">
+                <span class="material-symbols-outlined">image</span>image
+              </div>
+              <div id="createToggle" class="add-new-card__list">
+                <span class="material-symbols-outlined">expand_more</span>add toggle
+              </div>
+              <div id="createCode" class="add-new-card__list">
+                <span class="material-symbols-outlined">code</span>code
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-widget_wrapper">
+    <div class="sidebar-widget">
+      <div class="sidebar-widget__item js-delete">
+        <span class="icon material-symbols-outlined md-20">delete</span>delete
+      </div>
+      <div class="sidebar-widget__item js-rename">
+        <span class="icon material-symbols-outlined">drive_file_rename_outline</span>rename
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/index-bundle.js"></script>
+  <script src="scripts/edit-bundle.js"></script>
+  <script src="scripts/common-bundle.js"></script>
+</body>
+</html>

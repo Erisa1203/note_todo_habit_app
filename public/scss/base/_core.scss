@@ -1,0 +1,63 @@
+@use "../base/colors" as *;
+@use "../mixin" as *;
+
+html,
+body {
+  // rem基準値
+  font-size: 10px;
+}
+
+body {
+  font-weight: 400;
+  color: $text;
+  @include font-stack;
+  overflow: hidden;
+  position: relative;
+  letter-spacing: .1em;
+  line-height: 1;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $text;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.l-container {
+  width: 100%;
+  padding: 40px 8.7% 40px calc(290px + 8.7%);
+  transition: 0.5s ease-out;
+  // margin: 0 auto;
+  &--full {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &--wide {
+    padding: 40px 6% 40px calc(290px + 6%);
+  }
+
+  &.wide {
+    padding: 60px 15%;
+  }
+}
+
+.fsz-10 {font-size: 1rem;}
+.fsz-11 {font-size: 1.1rem;}
+.fsz-12 {font-size: 1.2rem;}
+.fsz-13 {font-size: 1.3rem;}
+.fsz-14 {font-size: 1.4rem;}
+.fsz-15 {font-size: 1.5rem;}
+.fsz-16 {font-size: 1.6rem;}
+
+.mb10 {margin-bottom: 1rem;}
+.mb20 {margin-bottom: 2rem;}

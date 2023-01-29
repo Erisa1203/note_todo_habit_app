@@ -1,0 +1,59 @@
+@use "../base" as *;
+@use "../mixin" as *;
+
+.card {
+  @include shadow;
+  &--lg {
+    @include card-layout(30, 30);
+    &-nopad {
+      @include card-layout(30, 0);
+    }
+  }
+  &--md {
+    @include card-layout(20, 20);
+    &-nopad {
+      @include card-layout(20, 0);
+    }
+  }
+  &--sm {
+    @include card-layout(10, 10);
+  }
+  &--col2 {
+    width: 49%;
+  }
+  &--iconCard {
+    @include card-border(20);
+    @include column-center;
+
+    span {
+      margin-bottom: 10px;
+    }
+    &:hover {
+
+    }
+  }
+}
+
+.border-card {
+  &--lg {
+    padding: 20px;
+    @include card-border(20);
+  }
+  &--sm {
+    padding: 10px;
+    @include card-border(10);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  &--aligncenter {
+    display: inline-flex;
+    align-items: center;
+  }
+  .icon {
+    margin-right: 6px;
+  }
+  &.selected {
+    background: #f2f2f2;
+    pointer-events: none;
+  }
+}

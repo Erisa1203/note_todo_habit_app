@@ -1,0 +1,12 @@
+
+// FONT
+// @include font-stack;
+//--------------------------------------------------
+
+@mixin font-stack {
+  font-family: YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+
+@mixin font-eng {
+  font-family: Jura, 'Verdana','Verdana','Verdana', sans-serif;
+}

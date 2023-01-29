@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jura" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined"  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
+  <title>Note app</title>
+</head>
+<body onContextmenu="return false;">
+  <div class="app-wrapper">
+    <div class="sidebar-wrapper">
+      <div class="sidebar sidebar--fixed">
+        <nav class="nav">
+          <div class="nav__content">
+            <div id="nav-notes" class="nav__item selected">
+              <div class="nav__inner">notes</div>
+            </div>
+            <div id="nav-todos" class="nav__item"><a href="/todos.html" class="nav__inner">todos</a></div>
+            <div id="nav-habits" class="nav__item"><div class="nav__inner">habits</div></div>
+          </div>
+          <div id="display-fav-folders" class="nav__content">
+            <div class="fsz-12 mb10">favorite</div>
+          </div>
+        </nav>
+        <div class="close-sidebar js-close-sidebar">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+        <div class="add-contents">
+          <div class="icon-nav_wrapper">
+            <div class="icon-nav">
+              <div class="icon-nav__item js-create-new-note">
+                <span class="material-icons-outlined icon md-20">note_add</span>new note
+              </div>
+              <div id="create_new_todo" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">check_box</span>create todo
+              </div>
+              <div id="set_timer" class="icon-nav__item">
+                <span class="material-icons-outlined icon md-20">timer</span>set timer
+              </div>
+            </div>
+          </div>
+          <div class="btn btn--circle">
+            <span class="material-symbols-outlined">add</span>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-notes" class="sidebar sidebar--side">
+        <nav class="nav">
+          <div class="nav__content">
+          </div>
+        </nav>
+        <div class="add-new add-new--nowrap js-create-new-folder">
+          <span class="icon md-16 material-symbols-outlined">add_box</span>add new folder
+        </div>
+        <div class="close-sidebar js-close-sidebar-opened">
+          <span class="icon md-20 material-symbols-outlined">double_arrow</span>
+        </div>
+      </div>
+    </div>
+    <div class="app-content">
+      <div class="l-container">
+        <div class="note note--overview">
+          <div class="widget-holder">
+            <div class="card card--col2 card--iconCard js-create-new-note">
+              <span class="material-symbols-outlined">description</span>new note
+            </div>
+            <div class="card card--col2 card--iconCard js-create-new-folder">
+              <span class="material-symbols-outlined">folder</span>new folder
+            </div>
+          </div>
+          <div class="note__head">
+            <div id="overview-title" class="note__text note__text--title">All Notes</div>
+            <select id="filter-by" class="dropdown">
+              <option value="byEdited">Sort by last edited</option>
+              <option value="byCreated">Sort by recently created</option>
+              <option value="alphabetical">Sort alphabetically</option>
+            </select>
+          </div>
+          <div class="note-list">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-widget_wrapper">
+    <div class="sidebar-widget">
+      <div class="sidebar-widget__item js-delete">
+        <span class="icon material-symbols-outlined md-20">delete</span>delete
+      </div>
+      <div class="sidebar-widget__item js-rename">
+        <span class="icon material-symbols-outlined">drive_file_rename_outline</span>rename
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/index-bundle.js"></script>
+  <script src="scripts/note-bundle.js"></script>
+  <script src="scripts/note_common-bundle.js"></script>
+</body>
+</html>
